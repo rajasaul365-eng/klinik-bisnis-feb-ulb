@@ -1,0 +1,18 @@
+# Dependensi
+/node_modules
+
+# Hasil build Next.js
+/.next/
+/out/
+/build
+next-env.d.ts
+*.tsbuildinfo
+
+# File lingkungan (berisi data sensitif, jangan di-commit)
+.env
+.env*.local
+
+# Lain-lain
+.DS_Store
+npm-debug.log*
+.vercel

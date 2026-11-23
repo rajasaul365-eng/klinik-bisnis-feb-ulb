@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* Palet warna tema: biru tua (akademik) dan hijau zamrud (bisnis/pertumbuhan) */
+@theme {
+  --color-primer-50: #eef4ff;
+  --color-primer-100: #dbe6fe;
+  --color-primer-600: #1e4fa8;
+  --color-primer-700: #173f87;
+  --color-primer-800: #13336b;
+  --color-primer-900: #0f2650;
+  --color-aksen-500: #10b981;
+  --color-aksen-600: #059669;
+  --font-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 text-slate-800 antialiased;
+}
+
+/* Kelas bantu yang sering dipakai agar kode komponen lebih ringkas */
+@layer components {
+  .wadah {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+  .tombol-primer {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primer-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primer-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-primer-600 focus-visible:ring-offset-2;
+  }
+  .tombol-sekunder {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-100;
+  }
+  .tombol-wa {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-aksen-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-aksen-500;
+  }
+  .kartu {
+    @apply rounded-xl border border-slate-200 bg-white shadow-sm;
+  }
+  .label-form {
+    @apply mb-1 block text-sm font-medium text-slate-700;
+  }
+  .input-form {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 focus:border-primer-600 focus:outline-none focus:ring-2 focus:ring-primer-100;
+  }
+}
+
+/* Saat mencetak hasil asisten riset/SWOT, sembunyikan navigasi dan formulir */
+@media print {
+  .tidak-dicetak {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+}
